@@ -96,11 +96,7 @@ namespace {
         LinkedList<uint64_t> ints2(ints);
         ASSERT_EQ(0, ints2.size());
         ASSERT_TRUE(ints.empty());
-        _testScore += 2;
-
-        LinkedList<uint64_t> int24(ints.begin(), ints.end());
-        ASSERT_EQ(0, ints2.size());
-        _testScore += 2;
+        _testScore += 4;
     }
 
     TEST_F(LinkedListTest, PushPop) {
