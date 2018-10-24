@@ -71,6 +71,7 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
             where.node()->_next = new Node(value, where.node()->_next);
             if (where.node() == tail) tail = where.node()->_next;
             _size++;
+            return where;
         }
 
         iterator erase(iterator where) {
@@ -80,9 +81,11 @@ namespace edu { namespace vcccd { namespace vc { namespace csv15 {
                 delete old;
             }
             _size--;
+            return where;
         }
         iterator erase(iterator first, iterator last) {
             for (auto i = first; i != last; erase(i), i++);
+            return first;
         }
         void push_back(const T &value) {
             Node *newNode = new Node(value, nullptr);
